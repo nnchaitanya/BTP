@@ -30,6 +30,12 @@ public interface ObjectProtocol extends VersionedProtocol {
 		
 	public String DeleteBucket(UserId userID, BucketId bucketID);
 	
+	// don't know the metadata class type
+	public void GetBucket(UserId userID, BucketId bucketID);
+	
+	public void UpdateBucket(UserId userID, BucketId bucketID, );
+	// edited
+	
 	public List<String> ListObjects(UserId userID, BucketId bucketID);
 	
 	public String PutObject(BucketId bucketID, ObjectInfo objectInfo, ServletInputStream reader);
@@ -37,5 +43,20 @@ public interface ObjectProtocol extends VersionedProtocol {
 	public boolean DeleteObject(BucketId bucketID, ObjectId objectKey);
 	
 	public ObjectOut GetObject(BucketId bucketID,ObjectId objectKey);
+	
+	//
+	public boolean ComposeObjects(UserId userID, BucketId bucketID, List<String> listObjects);
+	
+	public boolean CopyObject(BucketId bucketID, ObjectId sourceObject, ObjectId destinationObject);
+	
+	public List<String> ListObjects(UserId userID, BucketId bucketID, int filter);
+	
+	public boolean UpdateObject(BucketId bucketID, ObjectId objectKey, int metaData);
+	
+	public boolean UpdateMetaData(BucketId bucketID, ObjectId objectKey, int metaData);
+	
+	public void Watchall();
+	
+	//
 	
 }
