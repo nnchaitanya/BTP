@@ -32,6 +32,10 @@ import hbase.HbaseUtil;
 public class BucketACL {
 
 	// this should be bucket table i.e. bucket mapped to user and password
+
+
+	//Need to create a class for the type of acl's for buckets which will contain the user information for the buckets and the corresponding read write access permissions
+	
 	private HashTable userTable;
 
 	// create and how to set permission to which bucket?
